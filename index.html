@@ -14,7 +14,7 @@
 .section{margin:24px 0}.section h2{font-size:28px;letter-spacing:-.04em;margin:0 0 14px}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}.card{padding:26px}
 .progress-wrap{display:grid;grid-template-columns:180px 1fr;gap:24px;align-items:center}.ring{width:170px;height:170px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--green) var(--p),#e8eee9 0);position:relative}.ring:after{content:"";position:absolute;inset:14px;background:#fff;border-radius:50%}.ring strong{z-index:1;font-size:38px}.bar{height:14px;background:#edf2ef;border-radius:99px;overflow:hidden}.bar i{display:block;height:100%;width:var(--p);background:linear-gradient(90deg,var(--green),#67d98b);border-radius:99px}
 .fun{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}.fun>div{padding:16px;border-radius:10px;background:#f7faf8}.fun b{display:block;font-size:22px;margin-bottom:3px}
-.days{display:grid;gap:10px}.day{display:grid;grid-template-columns:88px 1fr auto;gap:14px;align-items:center;padding:14px 16px;border:1px solid #e6ebe8;border-radius:9px}.date{font-weight:950;color:var(--navy)}.type{font-size:12px;font-weight:900;padding:6px 9px;border-radius:99px;background:#fff2f2;color:#b91c1c}.type.rec{background:#fff7e6;color:#a16207}.type.esc{background:#f1ebff;color:#6d28d9}
+.days{display:grid;gap:10px}.day{display:grid;grid-template-columns:88px 1fr auto;gap:14px;align-items:center;padding:14px 16px;border:1px solid #e6ebe8;border-radius:9px}.date{font-weight:950;color:var(--navy)}.type{font-size:12px;font-weight:900;padding:6px 9px;border-radius:99px;background:#fff2f2;color:#b91c1c}.type.rec{background:#fff7e6;color:#a16207}.type.esc{background:#f1ebff;color:#6d28d9}.type.evt{background:#e0f2fe;color:#0369a1}.beer{display:inline-block;margin-left:6px;font-size:11px;font-weight:900;padding:3px 8px;border-radius:99px;background:#fef3c7;color:#92400e;border:1px solid #fde68a;vertical-align:middle}.wd-title{font-size:16px;margin:18px 0 10px;color:var(--navy)}
 .timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.timeline.weekdays{grid-template-columns:repeat(5,1fr)}.month{padding:18px;border-radius:10px;background:#f7faf8;border:1px solid #e7ece9}.month b{font-size:18px}.month span{display:block;color:var(--muted);font-size:13px;margin-top:5px}
 footer{padding:30px 0 48px;color:var(--muted);font-size:13px;text-align:center}
 @media(max-width:900px){.hero,.grid2,.targets{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.ill{min-height:280px}.progress-wrap{grid-template-columns:1fr;text-align:center}.ring{margin:auto}.timeline{grid-template-columns:1fr 1fr}.timeline.weekdays{grid-template-columns:repeat(3,1fr)}}
@@ -103,8 +103,8 @@ footer{padding:30px 0 48px;color:var(--muted);font-size:13px;text-align:center}
           <p><strong>Meta:</strong> chegar em 18/12 com presença, conceitos e sanidade minimamente versionados.</p>
           <div class="bar" style="--p:60%" id="bar"><i></i></div>
           <div class="fun">
-            <div><b>☕ 54</b> cafés úteis*</div>
-            <div><b>💻 1</b> semestre em produção</div>
+            <div><b>☕ <span id="coffee">0</span></b> cafés até 18/12<br><span class="tiny">3 por dia de aula (chegada, intervalo e sobrevivência) • <span id="coffee04">0</span> até 04/12</span></div>
+            <div><b>🍺 <span id="beers">0</span></b> sextas sem aula<br><span class="tiny" id="beerNote">brinde garantido</span></div>
             <div><b>🏖️ 100%</b> férias no roadmap</div>
           </div>
         </div>
@@ -123,23 +123,34 @@ footer{padding:30px 0 48px;color:var(--muted);font-size:13px;text-align:center}
 
   <section class="section card">
     <h2>🏝️ Dias sem aula no caminho</h2>
-    <p style="color:var(--muted)">Considerando a partir de 27/09 e os eventos do calendário que explicitamente são feriado, feriado escolar ou recesso. Formação pedagógica aparece separada porque o calendário não a chama de “recesso”.</p>
+    <p style="color:var(--muted)">Considerando a partir de 27/09 e os eventos do calendário que explicitamente são feriado, feriado escolar ou recesso. Inclui o Wipex (18 a 20/11), sem aula — e o dia 20 já é feriado. Toda sexta sem aula ganha um 🍺 para comemorar.</p>
     <div class="days">
       <div class="day"><div class="date">12 OUT</div><div class="desc"><strong>Nossa Senhora Aparecida</strong><br><span class="tiny">segunda-feira</span></div><span class="type">FERIADO</span></div>
       <div class="day"><div class="date">13 OUT</div><div class="desc"><strong>Sem aula</strong><br><span class="tiny">terça-feira • calendário alterado</span></div><span class="type rec">SEM AULA</span></div>
       <div class="day"><div class="date">14 OUT</div><div class="desc"><strong>Sem aula</strong><br><span class="tiny">quarta-feira • semana inteira livre 🏖️</span></div><span class="type rec">SEM AULA</span></div>
       <div class="day"><div class="date">15 OUT</div><div class="desc"><strong>Dia do Professor</strong><br><span class="tiny">quinta-feira</span></div><span class="type esc">FERIADO ESCOLAR</span></div>
-      <div class="day"><div class="date">16 OUT</div><div class="desc"><strong>Recesso acadêmico e administrativo</strong><br><span class="tiny">sexta-feira • combo perfeito 😎</span></div><span class="type rec">RECESSO</span></div>
+      <div class="day"><div class="date">16 OUT</div><div class="desc"><strong>Recesso acadêmico e administrativo</strong> <span class="beer">🍺 sextou com cerveja</span><br><span class="tiny">sexta-feira • combo perfeito 😎</span></div><span class="type rec">RECESSO</span></div>
       <div class="day"><div class="date">28 OUT</div><div class="desc"><strong>Dia do Servidor Público</strong><br><span class="tiny">quarta-feira</span></div><span class="type rec">RECESSO</span></div>
       <div class="day"><div class="date">02 NOV</div><div class="desc"><strong>Finados</strong><br><span class="tiny">segunda-feira</span></div><span class="type">FERIADO</span></div>
       <div class="day"><div class="date">15 NOV</div><div class="desc"><strong>Proclamação da República</strong><br><span class="tiny">domingo — o feriado que veio com bug 😭</span></div><span class="type">FERIADO</span></div>
-      <div class="day"><div class="date">20 NOV</div><div class="desc"><strong>Dia de Zumbi e da Consciência Negra</strong><br><span class="tiny">sexta-feira</span></div><span class="type">FERIADO</span></div>
+      <div class="day"><div class="date">18 NOV</div><div class="desc"><strong>Wipex</strong><br><span class="tiny">quarta-feira • evento, sem aula</span></div><span class="type evt">WIPEX</span></div>
+      <div class="day"><div class="date">19 NOV</div><div class="desc"><strong>Wipex</strong><br><span class="tiny">quinta-feira • evento, sem aula</span></div><span class="type evt">WIPEX</span></div>
+      <div class="day"><div class="date">20 NOV</div><div class="desc"><strong>Dia de Zumbi e da Consciência Negra</strong> <span class="beer">🍺 sextou com cerveja</span><br><span class="tiny">sexta-feira • feriado no último dia do Wipex</span></div><span class="type">FERIADO</span></div>
     </div>
   </section>
 
   <section class="section card">
     <h2>📅 Contagem por dia da semana</h2>
-    <p style="color:var(--muted)">Quantos dias de cada tipo ainda faltam até 18/12, excluindo feriados, recessos e dias sem aula.</p>
+    <p style="color:var(--muted)">Quantos dias de cada tipo ainda faltam, excluindo feriados, recessos, Wipex e dias sem aula.</p>
+    <h3 class="wd-title">😅 Até 04/12 (final psicológico)</h3>
+    <div class="timeline weekdays">
+      <div class="month"><b id="monCount04">0</b><span>Segundas-feiras</span></div>
+      <div class="month"><b id="tueCount04">0</b><span>Terças-feiras</span></div>
+      <div class="month"><b id="wedCount04">0</b><span>Quartas-feiras</span></div>
+      <div class="month"><b id="thuCount04">0</b><span>Quintas-feiras</span></div>
+      <div class="month"><b id="friCount04">0</b><span>Sextas-feiras</span></div>
+    </div>
+    <h3 class="wd-title">🎓 Até 18/12 (final oficial)</h3>
     <div class="timeline weekdays">
       <div class="month"><b id="monCount">0</b><span>Segundas-feiras</span></div>
       <div class="month"><b id="tueCount">0</b><span>Terças-feiras</span></div>
@@ -154,13 +165,13 @@ footer{padding:30px 0 48px;color:var(--muted);font-size:13px;text-align:center}
     <div class="timeline">
       <div class="month"><b>SET</b><span>27 → 30 • aquecimento da reta final</span></div>
       <div class="month"><b>OUT</b><span>4º bimestre começa dia 2 • vários respiros no calendário</span></div>
-      <div class="month"><b>NOV</b><span>19 dias letivos no calendário • foco e café</span></div>
+      <div class="month"><b>NOV</b><span>Wipex de 18 a 20 • feriado dia 20 • foco, café e 🍺</span></div>
       <div class="month"><b>DEZ</b><span>release final • 18/12 marcado como encerramento no calendário gráfico</span></div>
     </div>
   </section>
 
   <footer>
-    * “Dias úteis” aqui significa segunda a sexta entre hoje e 18/12, removendo feriados/feriado escolar/recessos explicitamente marcados no calendário. Não é uma contagem oficial de presença por disciplina.<br>
+    * “Dias úteis” aqui significa segunda a sexta entre hoje e 18/12, removendo feriados/feriado escolar/recessos explicitamente marcados no calendário e os dias do Wipex. Não é uma contagem oficial de presença por disciplina.<br>
     Visual flat inspirado no estilo do <a href="https://undraw.co/" target="_blank" rel="noreferrer">unDraw</a>, desenhado inline para a página continuar funcionando offline.
   </footer>
 </div>
@@ -169,7 +180,8 @@ footer{padding:30px 0 48px;color:var(--muted);font-size:13px;text-align:center}
 const END = new Date('2026-12-18T23:59:59');
 const END04 = new Date('2026-12-04T23:59:59');
 const SEM_START = new Date('2026-07-28T00:00:00');
-const blocked = new Set(['2026-10-12','2026-10-13','2026-10-14','2026-10-15','2026-10-16','2026-10-28','2026-11-02','2026-11-20']);
+const blocked = new Set(['2026-10-12','2026-10-13','2026-10-14','2026-10-15','2026-10-16','2026-10-28','2026-11-02','2026-11-18','2026-11-19','2026-11-20']);
+const COFFEE_PER_DAY = 3;
 const phrases=[
   '☕ Status: ainda há café suficiente no backlog.',
   '🐛 Bug conhecido: dezembro parece longe quando tem trabalho para entregar.',
@@ -212,21 +224,32 @@ function calc(){
 
   document.querySelector('#phrase').textContent=phrases[new Date().getDate()%phrases.length];
 
-  // Contar dias por dia da semana (1=segunda, 2=terça, ..., 5=sexta)
-  const weekdayCounts = {1:0, 2:0, 3:0, 4:0, 5:0};
+  document.querySelector('#coffee').textContent=useful*COFFEE_PER_DAY;
+  document.querySelector('#coffee04').textContent=useful04*COFFEE_PER_DAY;
+
+  // Sextas sem aula (até 18/12) = cerveja 🍺
+  let beers=0;
   for(let d=new Date(now); d<=end; d.setDate(d.getDate()+1)){
-    const dayOfWeek = d.getDay();
-    // dayOfWeek: 0=domingo, 1=segunda, ..., 6=sábado
-    if(dayOfWeek >= 1 && dayOfWeek <= 5 && !blocked.has(key(d))) {
-      weekdayCounts[dayOfWeek]++;
-    }
+    if(d.getDay()===5 && blocked.has(key(d))) beers++;
   }
-  
-  document.querySelector('#monCount').textContent=weekdayCounts[1];
-  document.querySelector('#tueCount').textContent=weekdayCounts[2];
-  document.querySelector('#wedCount').textContent=weekdayCounts[3];
-  document.querySelector('#thuCount').textContent=weekdayCounts[4];
-  document.querySelector('#friCount').textContent=weekdayCounts[5];
+  document.querySelector('#beers').textContent=beers;
+  document.querySelector('#beerNote').textContent=beers?'brinde garantido até 18/12':'sem sextas livres pela frente 😢';
+
+  // Contar dias por dia da semana (1=segunda, ..., 5=sexta)
+  function weekdayCountsUntil(target){
+    const counts={1:0,2:0,3:0,4:0,5:0};
+    for(let d=new Date(now); d<=target; d.setDate(d.getDate()+1)){
+      const dow=d.getDay();
+      if(dow>=1 && dow<=5 && !blocked.has(key(d))) counts[dow]++;
+    }
+    return counts;
+  }
+  const ids=['mon','tue','wed','thu','fri'];
+  const counts18=weekdayCountsUntil(end), counts04=weekdayCountsUntil(end04);
+  ids.forEach((id,i)=>{
+    document.querySelector(`#${id}Count`).textContent=counts18[i+1];
+    document.querySelector(`#${id}Count04`).textContent=counts04[i+1];
+  });
 }
 calc();
 </script>
